@@ -7,8 +7,14 @@ namespace WebApplication2.Context;
 
 public partial class MyDbContext : DbContext
 {
+    private readonly string _connectionString;
     public MyDbContext()
     {
+    }
+    
+    public MyDbContext(string connectionString)
+    {
+        _connectionString = connectionString;
     }
 
     public MyDbContext(DbContextOptions<MyDbContext> options)
@@ -39,8 +45,7 @@ public partial class MyDbContext : DbContext
     public virtual DbSet<User> Users { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseNpgsql("Host=34.101.160.134;Database=test;Username=campuss;Password=my_password");
+        => optionsBuilder.UseNpgsql(_connectionString);
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

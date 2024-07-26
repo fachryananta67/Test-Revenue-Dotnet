@@ -11,7 +11,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-var dbContextFactory = new DbContextFactory();
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+var dbContextFactory = new DbContextFactory(connectionString);
 builder.Services.AddSingleton<ISalesOrderRepository>(new SalesOrderRepository(dbContextFactory));
 
 var app = builder.Build();
