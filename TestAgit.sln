@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication2", "WebApplication2\WebApplication2.csproj", "{9EFCCE1C-DD5D-4C39-9817-48E2A5EBF531}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Agit.Revenue", "Test.Agit.Revenue\Test.Agit.Revenue.csproj", "{9EFCCE1C-DD5D-4C39-9817-48E2A5EBF531}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
